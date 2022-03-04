@@ -7,7 +7,6 @@ public class TicTacToe {
         Scanner sc = new Scanner(System.in);
 
         char ticTacToeField[][] = new char[3][3];
-        boolean booleanTicTacToe[][]= new boolean[3][3];
 
         char a = 0;
         char b = 0;
@@ -24,20 +23,31 @@ public class TicTacToe {
 
 
         for (;;) {
-            System.out.println("Player -X- ");
-                System.out.println(" Enter  your move number  горизонталь " );
-                a = (char) sc.nextInt();
-                System.out.println(" Enter  your move number вертикаль   " );
-                b= (char) sc.nextInt();
 
-                ticTacToeField[a - 1][b - 1] ='x';
-                booleanTicTacToe[ a - 1 ][ b - 1 ]=true;
+            System.out.println("Player -X- ");
+
+
+            for (; ; ) {
+                System.out.println(" Enter  your move number  горизонталь ");
+                a = (char) sc.nextInt();
+                System.out.println(" Enter  your move number вертикаль   ");
+                b = (char) sc.nextInt();
+                if (ticTacToeField[a - 1][b - 1] == 'x' || ticTacToeField[a - 1][b - 1] == 'o') {
+                    System.out.println("Клетка занята - попробуйте выбрать свободную !");
+
+
+                } else {
+                    ticTacToeField[a - 1][b - 1] = 'x';
+                    break;
+
+                }
+            }
 
 
             // рисование
-            for (int i = 0 ; i< ticTacToeField.length; i++){
-                for(int j = 0 ; j<ticTacToeField[i].length;j++){
-                    System.out.print(" "+ ticTacToeField[i][j]);
+            for (int i = 0; i < ticTacToeField.length; i++) {
+                for (int j = 0; j < ticTacToeField[i].length; j++) {
+                    System.out.print(" " + ticTacToeField[i][j]);
                 }
 
                 System.out.println();
@@ -47,61 +57,64 @@ public class TicTacToe {
 
             //проверка на победу X
 
-            for (int i = 0 ; i< ticTacToeField.length; i++){
-                for(int j = 0 ; j<ticTacToeField[i].length;j++){
-               if (ticTacToeField[0][0]== 'x' && ticTacToeField[0][1]=='x' && ticTacToeField[0][2]=='x') {
-                   System.out.println("победил Х");
-                   return;
-               }
-               else if (ticTacToeField[1][0]=='x'&& ticTacToeField[1][1]=='x' && ticTacToeField[1][2]=='x'){
-                   System.out.println("победил Х");
-                   return;
+            for (int i = 0; i < ticTacToeField.length; i++) {
+                for (int j = 0; j < ticTacToeField[i].length; j++) {
+                    if (ticTacToeField[0][0] == 'x' && ticTacToeField[0][1] == 'x' && ticTacToeField[0][2] == 'x') {
+                        System.out.println("победил Х");
+                        return;
+                    } else if (ticTacToeField[1][0] == 'x' && ticTacToeField[1][1] == 'x' && ticTacToeField[1][2] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[2][0]=='x' && ticTacToeField[2][1]=='x' && ticTacToeField[2][2]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[2][0] == 'x' && ticTacToeField[2][1] == 'x' && ticTacToeField[2][2] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[0][0]=='x' && ticTacToeField[1][0]=='x' && ticTacToeField[2][0]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[0][0] == 'x' && ticTacToeField[1][0] == 'x' && ticTacToeField[2][0] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[0][1]=='x' && ticTacToeField[1][1]=='x' && ticTacToeField[2][1]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[0][1] == 'x' && ticTacToeField[1][1] == 'x' && ticTacToeField[2][1] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[0][2]=='x' && ticTacToeField[0][2]=='x' && ticTacToeField[0][2]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[0][2] == 'x' && ticTacToeField[0][2] == 'x' && ticTacToeField[0][2] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[0][0]=='x' && ticTacToeField[1][1]=='x' && ticTacToeField[2][2]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[0][0] == 'x' && ticTacToeField[1][1] == 'x' && ticTacToeField[2][2] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
-               else if (ticTacToeField[0][2]=='x' && ticTacToeField[1][1]=='x' && ticTacToeField[2][0]=='x'){
-                   System.out.println("победил Х");
-                   return;
+                    } else if (ticTacToeField[0][2] == 'x' && ticTacToeField[1][1] == 'x' && ticTacToeField[2][0] == 'x') {
+                        System.out.println("победил Х");
+                        return;
 
-               }
+                    }
                 }
             }
 
 
-
             System.out.println("Player -O- ");
 
+            for (; ; ){
 
-            System.out.println(" Enter  your move number  горизонталь  " );
+                System.out.println(" Enter  your move number  горизонталь  ");
             a = (char) sc.nextInt();
-            System.out.println(" Enter  your move number вертикаль   " );
+            System.out.println(" Enter  your move number вертикаль   ");
             b = (char) sc.nextInt();
+                if (ticTacToeField[a - 1][b - 1] == 'x' || ticTacToeField[a - 1][b - 1] == 'o') {
+                    System.out.println("Клетка занята - попробуйте выбрать свободную !");
 
-            ticTacToeField[a-1][b-1]='o';
+
+                } else {
+                    ticTacToeField[a - 1][b - 1] = 'o';
+                    break;
+
+                }
+
+
+        }
 
             for (int i = 0 ; i< ticTacToeField.length; i++){
                 for(int j = 0 ; j<ticTacToeField[i].length;j++){
