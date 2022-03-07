@@ -23,6 +23,13 @@ public class TicTacToe {
 
 
         for (;;) {
+         int k=0;
+           k++;
+            if (k==10){
+                System.out.println(" Вы оба проиграли !");
+                break;
+
+            }
 
             System.out.println("Player -X- ");
 
@@ -78,7 +85,7 @@ public class TicTacToe {
                         System.out.println("победил Х");
                         return;
 
-                    } else if (ticTacToeField[0][2] == 'x' && ticTacToeField[0][2] == 'x' && ticTacToeField[0][2] == 'x') {
+                    } else if (ticTacToeField[0][2] == 'x' && ticTacToeField[1][2] == 'x' && ticTacToeField[2][2] == 'x') {
                         System.out.println("победил Х");
                         return;
 
@@ -170,6 +177,7 @@ public class TicTacToe {
             }
 
                 }
+
             }
 
         }
