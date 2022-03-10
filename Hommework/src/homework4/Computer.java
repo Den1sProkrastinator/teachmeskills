@@ -8,7 +8,7 @@ public class Computer {
     int memory;
     int processor;
     int ressurs;
-    int random=1;
+    int random ;
     int myNumber;
     int onOff=0;
     boolean onBoolean;
@@ -25,7 +25,7 @@ public class Computer {
    public void on(){
 
              for(;;){
-//                 random=(int) (Math.random() *2);
+                 random=(int) (Math.random() *2);
 
                   System.out.println("загадайте 0 или 1");
                    myNumber=sc.nextInt();
@@ -58,7 +58,7 @@ public class Computer {
 
     public  void off(){
                 for(;;){
-//                    random=(int) (Math.random() *2);
+                    random=(int) (Math.random() *2);
 
                     System.out.println("загадайте 0 или 1");
                     myNumber=sc.nextInt();
