@@ -7,12 +7,14 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String name;
-        int groupSize = 14;
+        int groupSize = 4;
         Student mygrup[] = new Student[groupSize];
+        Student arrayReiting[]= new Student[groupSize];
 
         for (int i = 0; i < mygrup.length; i++) {
             name=sc.nextLine();
             mygrup[i] = new Student(name);
+
 
         }
 
@@ -21,7 +23,6 @@ public class Main {
         }
 
 
-        System.out.println("Студент -" + mygrup[2].toString());
     }
 }
 

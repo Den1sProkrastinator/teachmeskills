@@ -7,7 +7,7 @@ public class Student {
     String name  ;
     int group;
     int  mark ;
-
+   int i = 0;
 
     Student(String name){
            this.name = name;
@@ -15,13 +15,15 @@ public class Student {
            group = 18;
        }
 
+
+
        
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", group=" + group +
-                ", score=" + mark +
+                ", mark=" + mark +
                 '}';
     }
 }
