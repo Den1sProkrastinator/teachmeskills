@@ -1,116 +1,116 @@
 package homework4;
 
+import sun.security.mscapi.CPublicKey;
+
 import java.util.Scanner;
 
 public class Computer {
     Scanner sc = new Scanner(System.in);
-    int hardDevice;
-    int memory;
-    int processor;
-    int ressurs;
-    int random ;
-    int myNumber;
-    int onOff=0;
-    boolean onBoolean;
-    boolean offBoolean;
+    private int hardDevice;
+    private int memory;
+    private int processor;
+    private int ressurs;
+    private int random;
+    private int myNumber;
+
+    private boolean in;
+    private boolean out;
 
 
 
+    public Computer(int hardDevice, int memory, int processor, int ressurs) {
+        this.hardDevice = hardDevice;
+        this.memory = memory;
+        this.processor = processor;
+        this.ressurs = ressurs;
+    }
 
-   public  void getComputer(){
-       System.out.println(
-              "Hard-"+hardDevice+"\nProcessor-"+processor+"\nMemmory-"+memory+
-               "\n колличество включений " + onOff);
-   }
-   public void on(){
-
-             for(;;){
-                 random=(int) (Math.random() *2);
-
-                  System.out.println("загадайте 0 или 1");
-                   myNumber=sc.nextInt();
-
-                  if(myNumber==1 || myNumber==0){
-
-                      break;
-                  }
-                  else {
-                      System.out.println("попробуйте еще раз");
-
-                 }
-
-                 }
+    public void getComputer() {
+        System.out.println(
+                "Hard-" + hardDevice + "\nProcessor-" + processor + "\nMemmory-" + memory);
+    }
 
 
-            if (myNumber==random){
-                System.out.println("Комп включился");
-                onBoolean=true;
+    public void inputNumber0or1(){
+        for(;;){
+        random = (int) (Math.random() * 2);
 
-            }
-            else {
+        System.out.println("загадайте 0 или 1");
+        myNumber = sc.nextInt();
+
+        if (myNumber == 1 || myNumber == 0) {
+            break;
+        } else {
+            System.out.println(" Только 0 или 1 !!! Попробуйте еще раз");
+        }
+    }
+
+
+    }
+    public boolean on() {
+
+       inputNumber0or1();
+
+
+            if (myNumber != random) {
+
                 System.out.println("Комп сгорел(((");
+                return in=false;
+
+            } else {
+                System.out.println("Комп включился");
+                return in=true;
+
 
             }
+
+    }
+
+
+        public boolean off() {
+
+                inputNumber0or1();
+
+                if (myNumber != random) {
+                    System.out.println("Комп сгорел(((");
+                    return out=false;
+
+                } else {
+                    System.out.println("Комп выключился");
+                    return out=true;
+                }
+
+            }
+
+
+
+        public void loadComputer() {
+            for (int i =0; ; i++) {
+
+
+                on();
+                if(in!=true || i>=ressurs ){
+                    System.out.println("Мать сгорела (((((");
+                    break;
+                }
+                off();
+                if(out!=true || i>=ressurs){
+                    System.out.println("Мать сгорела (((((");
+                    break;
+                }
+
+
+
+                    System.out.println("Циклов работы -  " + (i+1));
+
+            }
+
+
+        }
     }
 
 
 
-
-    public  void off(){
-                for(;;){
-                    random=(int) (Math.random() *2);
-
-                    System.out.println("загадайте 0 или 1");
-                    myNumber=sc.nextInt();
-                    if(myNumber==1 || myNumber==0){
-                        break;
-                    }
-                    else {
-                        System.out.println("попробуйте еще раз");
-                    }
-                }
-
-
-                if (myNumber==random){
-                    System.out.println("Комп выключился");
-                    offBoolean=true;
-                }
-                else {
-                    System.out.println("Комп сгорел(((");
-
-                }
-
-            }
-
-
-
-
-
-
-
-
-      public void loadComputer(){
-        for (;;){
-
-            on();
-            off();
-
-            if (onBoolean==true && offBoolean==true && onOff<ressurs){
-                onOff++;
-                System.out.println("Циклов работы -" + onOff);
-            }
-            else {
-                System.out.println("комп сгорел (((");
-                break;
-            }
-
-        }
-
-
-
-      }
-
-            }
 
 
 
