@@ -10,8 +10,9 @@ public class Computer {
     private int memory;
     private int processor;
     private int ressurs;
-    private int random;
-    private int myNumber;
+    private int random=1;
+    private int myNumber=1;
+    private int onOff;
 
     private boolean in;
     private boolean out;
@@ -27,13 +28,13 @@ public class Computer {
 
     public void getComputer() {
         System.out.println(
-                "Hard-" + hardDevice + "\nProcessor-" + processor + "\nMemmory-" + memory);
+                "Hard-" + hardDevice + "\nProcessor-" + processor + "\nMemmory-" + memory + "\nЦиклов включений.выключений-"+onOff );
     }
 
 
     public void inputNumber0or1(){
         for(;;){
-        random = (int) (Math.random() * 2);
+//        random = (int) (Math.random() * 2);
 
         System.out.println("загадайте 0 или 1");
         myNumber = sc.nextInt();
@@ -98,10 +99,11 @@ public class Computer {
                     System.out.println("Мать сгорела (((((");
                     break;
                 }
+                onOff++;
 
 
 
-                    System.out.println("Циклов работы -  " + (i+1));
+                    System.out.println("Циклов работы -  " + onOff);
 
             }
 
