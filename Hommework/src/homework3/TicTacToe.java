@@ -8,8 +8,8 @@ public class TicTacToe {
 
         char ticTacToeField[][] = new char[3][3];
 
-        char a = 0;
-        char b = 0;
+        char a ;
+        char b ;
 
         for (int i = 0; i < ticTacToeField.length; i++) {
             for (int j = 0; j < ticTacToeField[i].length; j++) {

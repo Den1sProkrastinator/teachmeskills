@@ -10,8 +10,8 @@ public class Computer {
     private int memory;
     private int processor;
     private int ressurs;
-    private int random=1;
-    private int myNumber=1;
+    private int random;
+    private int myNumber;
     private int onOff;
 
     private boolean in;
@@ -34,7 +34,7 @@ public class Computer {
 
     public void inputNumber0or1(){
         for(;;){
-//        random = (int) (Math.random() * 2);
+        random = (int) (Math.random() * 2);
 
         System.out.println("загадайте 0 или 1");
         myNumber = sc.nextInt();
@@ -46,7 +46,6 @@ public class Computer {
         }
     }
 
-
     }
     public boolean on() {
 
@@ -55,25 +54,22 @@ public class Computer {
 
             if (myNumber != random) {
 
-                System.out.println("Комп сгорел(((");
+                System.out.println("Мать сгорела (((");
                 return in=false;
 
             } else {
                 System.out.println("Комп включился");
                 return in=true;
-
-
             }
 
     }
-
 
         public boolean off() {
 
                 inputNumber0or1();
 
                 if (myNumber != random) {
-                    System.out.println("Комп сгорел(((");
+                    System.out.println("Мать сгорела (((");
                     return out=false;
 
                 } else {
@@ -83,11 +79,8 @@ public class Computer {
 
             }
 
-
-
         public void loadComputer() {
             for (int i =0; ; i++) {
-
 
                 on();
                 if(in!=true || i>=ressurs ){
@@ -100,8 +93,6 @@ public class Computer {
                     break;
                 }
                 onOff++;
-
-
 
                     System.out.println("Циклов работы -  " + onOff);
 
